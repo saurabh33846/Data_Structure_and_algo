@@ -1,5 +1,13 @@
 /*package whatever //do not write package name here */
+/*
+Problem: given a array of sequence , find max continuous subsequce of array
 
+Here the logic is:
+let's say maxSum[i]= maximum sum till ith element
+
+Then: maxSum[i] = maximum( maxSum[i]+input[i], input[i])
+
+*/
 import java.util.*;
 import java.lang.*;
 import java.io.*;
