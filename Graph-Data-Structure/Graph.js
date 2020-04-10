@@ -29,26 +29,28 @@ class Vertex {
         this.data = null;
         this.adjescentVertex = [];
         this.edges = [];
+        this.adjVertexEdgeMap = {};
     }
     addAdjescentVertex(edge, vertex) {
         this.edges.push(edge);
-        this.addAdjescentVertex.push(vertex);
+        this.adjescentVertex.push(vertex);
+        this.adjVertexEdgeMap[vertex.id] = edge;
     }
-    get id () {
-        return this.id;
-    }
-    get data () {
-        return this.data
-    }
-    get edges () {
-        return this.edges;
-    }
-    get addAdjescentVertex () {
-        return this.addAdjescentVertex;
-    }
-    set data (data) {
-        this.data = data;
-    }
+//     get id () {
+//         return this.id;
+//     }
+//     get data () {
+//         return this.data
+//     }
+//     get edges () {
+//         return this.edges;
+//     }
+//     get addAdjescentVertex () {
+//         return this.addAdjescentVertex;
+    //}
+//     set data (data) {
+//         this.data = data;
+//     }
 }
 class Edge {
     constructor (vertex1, vertex2, isDirected= false, weight=0) {
@@ -72,3 +74,4 @@ graph.addEdge(2,8);
 graph.addEdge(3,6);
 console.log(graph.vertexList);
 console.log(graph.edgeList);
+

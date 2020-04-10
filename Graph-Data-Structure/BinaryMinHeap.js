@@ -37,7 +37,7 @@ class BinaryMinHeap {
     }
     decreaseKey = function(key, newWeight) {
         let position = this.nodePosition.get(key);
-        if(position) {
+        if(position !== undefined) {
             this.allNodes[position].weight = newWeight;
             let current = position;
             this.heapifyUp(current);
@@ -63,27 +63,37 @@ class BinaryMinHeap {
             return;
         } 
         if( right >= this.size) {
-            return;
+            right = left;
         }
-        let minIndex = this.allNodes[left] > this.allNodes[right]? left:right;
-        if(allNodes[minIndex] > allNodes[index]){
+        let minIndex = this.allNodes[left].weight < this.allNodes[right].weight? left:right;
+        if(this.allNodes[minIndex].weight < this.allNodes[index].weight){
             this.swapAndUpdate(this.allNodes[minIndex], this.allNodes[index]);
             this.heapify(minIndex);
         }
     }
     extractMin = function() {
         let newNode = new Node();
-        swapAndUpdate(this.allNodes[0], this.allNodes[ths.size-1]);
+        this.swapAndUpdate(this.allNodes[0], this.allNodes[this.size-1]);
         newNode = this.allNodes[this.size-1];
-        m.delete(this.allNodes[this.size-1]);
+        this.nodePosition.delete(this.allNodes[this.size-1].key);
         this.size--;
         this.heapify(0);
+        return newNode;
     }
     getMin = function() {
         return this.allNodes[0];
     }
     containsKey = function(key) {
-        return this.nodePosition.includes(key);
+        return this.nodePosition.has(key);
+    }
+    empty = function(){
+        return this.size ===0;
+    }
+    getWeight = function(key) {
+        let position = this.nodePosition.get(key);
+        if (position !== -1) {
+            return this.allNodes[position].weight;
+        }
     }
     
    
@@ -104,3 +114,5 @@ heap.add(3, "Tushar");
        heap.add(2,"AFR");
        heap.decreaseKey("Pramila", 1);
        console.log(heap.nodePosition);
+
+export default BinaryMinHeap;
