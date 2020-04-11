@@ -4,6 +4,9 @@ class Graph {
         this.edgeList = [];
         this.isDirected = !!isDirected;
     }
+    getAllVertex(){
+      return Object.values( this.vertexList);  
+    }
     addEdge (id1, id2, weight=0) {
         let vertex1 = this.vertexList[id1];
         let vertex2 = this.vertexList[id2];
@@ -35,6 +38,9 @@ class Vertex {
         this.edges.push(edge);
         this.adjescentVertex.push(vertex);
         this.adjVertexEdgeMap[vertex.id] = edge;
+    }
+    getAdjescentVertex (){
+        return this.adjescentVertex;
     }
 //     get id () {
 //         return this.id;
