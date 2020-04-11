@@ -22,7 +22,7 @@ function topologicalSort (graph) {
 }
 
 /******* Driving code  **************/
-const graph = new Graph(true);
+const graph = new Graph(true); // Create a directed graph
 graph.addEdge(1, 3);
         graph.addEdge(1, 2);
         graph.addEdge(3, 4);

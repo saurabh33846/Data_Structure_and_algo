@@ -7,6 +7,9 @@ class Graph {
     getAllVertex(){
       return Object.values( this.vertexList);  
     }
+    getAllEdges() {
+        return this.edgeList;
+    }
     addEdge (id1, id2, weight=0) {
         let vertex1 = this.vertexList[id1];
         let vertex2 = this.vertexList[id2];
