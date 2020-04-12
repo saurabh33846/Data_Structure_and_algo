@@ -1,3 +1,14 @@
+/****
+ * 
+ * KMP serach algo is string matching algorithm which takes linear time to perform serach.
+ * IT takes two input, string and pattern to be matched. If the length of string is n
+ * and length of pattern is n the time complexity of this algo is O(m+n.
+ * 
+ * This linear time complexity is achieve via removing unnecessary comparison when pattern 
+ * does not found via creating a table which store information about the suffix and prefix
+ * of the pattern to be matched.
+ */
+
 function KMPSearchPattern(source, pattern) {
     let sourceArr = [...source];
     let patternArr = [...pattern];
