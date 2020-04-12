@@ -10,6 +10,9 @@ class Graph {
     getAllEdges() {
         return this.edgeList;
     }
+    getVertexForKey (key) {
+        return this.vertexList[key];
+    }
     addEdge (id1, id2, weight=0) {
         let vertex1 = this.vertexList[id1];
         let vertex2 = this.vertexList[id2];
@@ -44,6 +47,9 @@ class Vertex {
     }
     getAdjescentVertex (){
         return this.adjescentVertex;
+    }
+    getAdjVertexEdgeMap () {
+        return this.adjVertexEdgeMap;
     }
 //     get id () {
 //         return this.id;
