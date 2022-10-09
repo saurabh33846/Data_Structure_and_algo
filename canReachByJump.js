@@ -3,6 +3,8 @@
  * @param {number} minJump
  * @param {number} maxJump
  * @return {boolean}
+ 
+ Jump Game VII
  */
 var canReach = function(s, minJump, maxJump) {
     let left = minJump;
